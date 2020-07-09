@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ohjelmoinnin-kertaus-tutoriaalilla", "Ohjelmoinnin-kertaus-tutoriaalilla\Ohjelmoinnin-kertaus-tutoriaalilla.csproj", "{8EB24BE8-B89E-452C-97A0-26709A4678FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8EB24BE8-B89E-452C-97A0-26709A4678FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EB24BE8-B89E-452C-97A0-26709A4678FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EB24BE8-B89E-452C-97A0-26709A4678FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EB24BE8-B89E-452C-97A0-26709A4678FF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A04F4BC1-500A-4B65-BE88-8596F4E4FE44}
+	EndGlobalSection
+EndGlobal
