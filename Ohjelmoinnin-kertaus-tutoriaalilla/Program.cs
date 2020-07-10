@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Dynamic;
+using System.Text;
 
 namespace Ohjelmoinnin_kertaus_tutoriaalilla
 {
@@ -195,12 +196,76 @@ namespace Ohjelmoinnin_kertaus_tutoriaalilla
             ///////////////////////////////
 
             //WHILE ITERATION STATEMENT
-
+            /*
             bool displayMenu = true;
             while (displayMenu)
             {
                 displayMenu = MainMenu();
             }
+            */
+
+            ///////////////////////////////
+
+            //WORKING WITH STRINGS
+
+            //string myString = "My \"so-called\" life";
+
+            //string myString = "What if I need a\nnew line?";
+            //string myString = "Go to your c:\\drive";
+            //string myString = @"Go to your c:\drive";
+
+            //string myString = String.Format("{1} = {0}", "First", "Second");
+
+            //string myString = String.Format("{0:c}", 123.45);
+
+            //string myString = String.Format("{0:n}", 19578720455);
+
+            //string myString = String.Format("Percentage: {0:P}", .123);
+
+            //string myString = String.Format("Phone Number: {0:(###) ###-####}", 3154687543);
+
+            //
+            //
+            // Sub-case 1 starts
+            //string myString = "  Hello everybody, it's really me   ";
+
+            //myString = myString.Substring(5,13);
+            //myString = myString.ToUpper();
+            //myString = myString.Replace(" ", "--");
+            //myString = myString.Remove(5, 13);
+            //myString = myString.Trim();
+
+            //myString = String.Format("Length before: {0} -- Length after {1}",
+            //    myString.Length, myString.Trim().Length);
+
+            //Sub-case 1 ends
+            //
+            //
+
+            //
+            //
+            //Sub-case 2 starts
+            //string myString = "";
+
+            //for(int i = 0; i < 100; i++)
+            //{
+            //    myString += "--" + i.ToString();
+            //}
+
+            //Console.WriteLine(myString);
+            //Sub-case 2 ends
+            //
+            //
+
+            StringBuilder myString = new StringBuilder();
+
+            for (int o = 0; o < 100; o++)
+            {
+                myString.Append("--");
+                myString.Append(o);
+            }
+
+            Console.WriteLine(myString);
         }
 
         //WHILE ITERATION STATEMENT methods
@@ -208,8 +273,8 @@ namespace Ohjelmoinnin_kertaus_tutoriaalilla
         {
             Console.Clear();
             Console.WriteLine("Choose an option:");
-            Console.WriteLine("1) Option 1");
-            Console.WriteLine("2) Option 2");
+            Console.WriteLine("1) Print Numbers");
+            Console.WriteLine("2) Guessing Game");
             Console.WriteLine("3) Exit");
             string result = Console.ReadLine();
 
@@ -238,6 +303,7 @@ namespace Ohjelmoinnin_kertaus_tutoriaalilla
 
         private static void PrintNumbers()
         {
+            Console.Clear();
             Console.WriteLine("Print numbers!");
 
             Console.Write("Type a number: ");
@@ -256,7 +322,33 @@ namespace Ohjelmoinnin_kertaus_tutoriaalilla
 
         private static void GuessingGame()
         {
+            Console.Clear();
             Console.WriteLine("Guessing game!");
+
+            Random myRandom = new Random();
+            int randomNumber = myRandom.Next(1, 11);
+
+            int guesses = 0;
+
+            bool incorrect = true;
+
+            do
+            {
+                Console.WriteLine("Guess a number between 1 and 10: ");
+                string result = Console.ReadLine();
+
+                guesses++;
+
+                if (result == randomNumber.ToString())
+                    incorrect = false;
+
+                else
+                    Console.WriteLine("Wrong, guess again.");
+
+            } while (incorrect);
+
+            Console.WriteLine("You guessed right! It took you {0} guesses", guesses);
+
             Console.ReadLine();
         }
 
