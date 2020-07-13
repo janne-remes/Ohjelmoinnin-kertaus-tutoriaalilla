@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Dynamic;
 using System.Text;
+using System.Collections;
+using System.Globalization;
 
 namespace Ohjelmoinnin_kertaus_tutoriaalilla
 {
@@ -8,7 +10,7 @@ namespace Ohjelmoinnin_kertaus_tutoriaalilla
     {
         static void Main(string[] args)
         {
-            //DATA TYPES AND VARIABLES, part 1
+            //1.1 DATA TYPES AND VARIABLES, part 1
             /*
             int x;
             int y;
@@ -22,7 +24,7 @@ namespace Ohjelmoinnin_kertaus_tutoriaalilla
             ///////////////////////////////
 
 
-            //DATA TYPES AND VARIABLES, part 2
+            //1.2 DATA TYPES AND VARIABLES, part 2
             /*
             Console.WriteLine("What is your name?");
             Console.Write("Type your first name: ");
@@ -38,7 +40,7 @@ namespace Ohjelmoinnin_kertaus_tutoriaalilla
 
             ///////////////////////////////
 
-            //THE IF DECISION STATEMENT, part 1
+            //2.1 THE IF DECISION STATEMENT, part 1
             /*
             Console.WriteLine("Bob's Big Giveaway");
             Console.Write("Choose a door: 1, 2 or 3: ");
@@ -66,7 +68,7 @@ namespace Ohjelmoinnin_kertaus_tutoriaalilla
 
             ///////////////////////////////
 
-            //THE IF DECISION STATEMENT, part 2
+            //2.2 THE IF DECISION STATEMENT, part 2
             /*
             Console.WriteLine("Bob's Big Giveaway");
             Console.Write("Choose a door: 1, 2 or 3: ");
@@ -82,7 +84,7 @@ namespace Ohjelmoinnin_kertaus_tutoriaalilla
 
             ///////////////////////////////
 
-            //FOR ITERATION
+            //3 FOR ITERATION
             /*
             for(int i = 0; i < 10; i++)
             {
@@ -104,7 +106,7 @@ namespace Ohjelmoinnin_kertaus_tutoriaalilla
 
             ///////////////////////////////
 
-            //ARRAYS, part 1
+            //4.1 ARRAYS, part 1
             /*
             int[] numbers = new int[5];
 
@@ -120,7 +122,7 @@ namespace Ohjelmoinnin_kertaus_tutoriaalilla
 
             ///////////////////////////////
 
-            //ARRAYS, part 2
+            //4.2 ARRAYS, part 2
             /*
             int[] numbers = new int[] { 4, 7, 12, 28, 33, 45 };
 
@@ -155,7 +157,7 @@ namespace Ohjelmoinnin_kertaus_tutoriaalilla
 
             ///////////////////////////////
 
-            //METHODS, part 1
+            //5.1 METHODS, part 1
             /*
             HelloWorld();
             Console.ReadLine();
@@ -163,7 +165,7 @@ namespace Ohjelmoinnin_kertaus_tutoriaalilla
 
             ///////////////////////////////
 
-            //METHODS, part 2
+            //5.2 METHODS, part 2
             /*
             Console.WriteLine("The Name Game");
 
@@ -195,7 +197,7 @@ namespace Ohjelmoinnin_kertaus_tutoriaalilla
 
             ///////////////////////////////
 
-            //WHILE ITERATION STATEMENT
+            //6 WHILE ITERATION STATEMENT
             /*
             bool displayMenu = true;
             while (displayMenu)
@@ -206,8 +208,8 @@ namespace Ohjelmoinnin_kertaus_tutoriaalilla
 
             ///////////////////////////////
 
-            //WORKING WITH STRINGS
-
+            //7 WORKING WITH STRINGS
+            /*
             //string myString = "My \"so-called\" life";
 
             //string myString = "What if I need a\nnew line?";
@@ -266,9 +268,99 @@ namespace Ohjelmoinnin_kertaus_tutoriaalilla
             }
 
             Console.WriteLine(myString);
+            */
+
+            ///////////////////////////////
+
+            //8 WORKING WITH DATES AND TIMES
+            /*
+            DateTime myValue = DateTime.Now;
+
+            //Console.WriteLine(myValue.ToString());
+            //Console.WriteLine(myValue.ToShortDateString());
+            //Console.WriteLine(myValue.ToShortTimeString());
+            //Console.WriteLine(myValue.ToLongDateString());
+            //Console.WriteLine(myValue.ToLongTimeString());
+
+            //Console.WriteLine(myValue.AddDays(547).ToLongDateString());
+            //Console.WriteLine(myValue.AddHours(7).ToString());
+            //Console.WriteLine(myValue.AddDays(-17).ToLongDateString());
+
+            //Console.WriteLine(myValue.Month);
+
+            //DateTime myBirthday = new DateTime(1985, 07, 31);
+            DateTime myBirthday = DateTime.Parse("31/7/1985");
+            Console.WriteLine(myBirthday.ToLongDateString());
+
+            //DateTime myBirthday = DateTime.Parse("31/7/1985");
+            TimeSpan myAge = DateTime.Now.Subtract(myBirthday);
+            Console.WriteLine(myAge.TotalDays);
+            */
+
+            ///////////////////////////////
+
+            //9 UNDERSTANDING CLASSES
+
+            // Sub-case 1 starts
+
+            Car myCar = new Car();
+            //myCar.Make = "Oldsmobile";
+            //myCar.Model = "Cutlas Supreme";
+            //myCar.Year = 1986;
+            //myCar.Color = "Silver";
+
+            //Console.WriteLine("{0} | {1} | {2} | {3}",
+            //    myCar.Make, myCar.Model,
+            //    myCar.Year, myCar.Color);
+
+            //decimal value = DetermineMarketValue(myCar);
+            //Console.WriteLine(value.ToString("C", CultureInfo.CurrentCulture));
+            //Console.WriteLine("{0:C}", value);
+
+            //Console.WriteLine("{0:C}", myCar.DetermineMarketValue());
+
+            // Sub-case 1 ends
+
+            ///
+
+            // Sub-case 2 starts
+
+            Car myOtherCar;
+            myOtherCar = myCar;
+
+            Car myThirdCar = new Car("Ford", "Escape", 2005, "White");
+
+            Console.WriteLine("{0}, {1}, {2}, {3}",
+                myOtherCar.Make, myOtherCar.Model,
+                myOtherCar.Year, myOtherCar.Color);
+
+            myOtherCar.Model = "98";
+
+            Console.WriteLine("{0}, {1}, {2}, {3}",
+               myCar.Make, myCar.Model,
+               myCar.Year, myCar.Color);
+
+            myOtherCar = null;
+
+            //Console.WriteLine("{0}, {1}, {2}, {3}",
+            //    myOtherCar.Make, myOtherCar.Model,
+            //    myOtherCar.Year, myOtherCar.Color);
+
+            myCar = null;
+
+            // Sub-case 2 ends
         }
 
-        //WHILE ITERATION STATEMENT methods
+        ////// METHODS //////
+
+        // 9 UNDERSTANDING CLASSES
+        private static decimal DetermineMarketValue(Car car)
+        {
+            decimal carValue = 100.00M;
+            return carValue;
+        }
+
+        //6 WHILE ITERATION STATEMENT methods
         private static bool MainMenu()
         {
             Console.Clear();
@@ -352,7 +444,7 @@ namespace Ohjelmoinnin_kertaus_tutoriaalilla
             Console.ReadLine();
         }
 
-        //METHODS, part 2
+        //5.2 METHODS, part 2
         private static string ReverseString(string message)
         {
             char[] messageArray = message.ToCharArray();
@@ -381,10 +473,48 @@ namespace Ohjelmoinnin_kertaus_tutoriaalilla
             Console.Write(message);
         }
 
-        //METHODS, part 1
+        //5.1 METHODS, part 1
         private static void HelloWorld()
         {
             Console.WriteLine("Hello, World!");
+        }
+    }
+
+    ////// CLASSES //////
+
+    //9 UNDERSTANDING CLASSES
+
+    class Car
+    {
+        public string Make { get; set; }
+        public string Model { get; set; }
+        public int Year { get; set; }
+        public string Color { get; set; }
+
+        public Car()
+        {
+            this.Make = "Nissan";
+        }
+
+        public Car(string make, string model, int year, string color)
+        {
+            Make = make;
+            Model = model;
+            Year = year;
+            Color = color;
+        }
+
+        public decimal DetermineMarketValue()
+        {
+            decimal carValue;
+
+            if (Year > 1990)
+                carValue = 10000;
+
+            else
+                carValue = 2000;
+
+            return carValue;
         }
     }
 }
